@@ -1,26 +1,23 @@
 #Coded by : James Dumitru
 
 # input #
-Name=input("Please Enter You're First and Last Name: ")
-Hours=int(input("Please Enter You're Hours Worked For This Week: "))
+Name = input("Please Enter You're First and Last Name: ")
+Hours = float(input("Please Enter You're Hours Worked For This Week: "))
+Hourlypayrate = float(12.50)
 
-Hourlypayrate=12.50
+# calculations for weekly, bi-weekly, monthly, yearly pay#
+weekly = (Hours * Hourlypayrate)
+biweekly = (weekly*2)
+monthly = (biweekly*2)
+yearly = (monthly*12)
 
-# needs to display weekly, bi-weekly, monthly, yearly #
+# reveal the weekly, bi-weekly, monthly, and yearly pay in that order#
+print(Name ,", given your hours worked:")
 
-weekly=round(Hours*Hourlypayrate, 3)
-biweekly=round(weekly*2, 3)
-monthly=round(biweekly*2, )
-yearly=round(monthly*12, 3)
+print(("You're weekly pay is: ", weekly))
 
-# reveal the weekly,bi-weekly,monthly, and yearly pay in that order#
+print(("You're biweekly pay is: ", biweekly))
 
-print(Name ,":")
+print(("You're monthly pay is: ", monthly))
 
-print("You're weekly pay is: ", weekly)
-
-print("You're biweekly pay is: ", biweekly)
-
-print("You're monthly pay is: ", monthly)
-
-print("You're yearly pay is: ", yearly)
+print(("You're yearly pay is: ", yearly))
