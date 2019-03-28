@@ -4,4 +4,3 @@ for i in range (numberOfRows):
     for j in range(i + 1):
         print("*", end="")
     print()
-    
