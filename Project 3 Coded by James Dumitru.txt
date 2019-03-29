@@ -3,22 +3,28 @@ import math
 
 # Triangle if chosen number 1
 def Triangle(size):
-  for l in range (size):
-      for w in range(l + 1):
-          print("*", end="")
-      print()
+  m = (2 * size) - 2
+  for i in range(0, size):
+    for j in range(0, m):
+        print(end=" ")
+    m = m - 1 # decrementing m after each loop
+    for j in range(0, i + 1):
+        # printing full Triangle pyramid using stars
+        print("* ", end=' ')
+    print(" ")
+    print()
 
 # Square if chosen number 1  
 def Square(size):
     for box in range(size):
-      print ('*' * size)
+      print (' . ' * size)
     print()
 
 # Rectangle if chosen number 1  
 def Rect(size):
     for height in range(int(size/2)):
         for width in range(size):
-            print("*",end=" ")
+            print(".",end=" ")
         print()
 
 # Attempt at bowtie    
@@ -37,12 +43,14 @@ def BowTie(size):
                 else:
                     print("",end=".")
         print()
-        
+
 # Menu with 1-5 options.
 # If pressed 1-4, it will give a shape.
 # If pressed 5, the program will end.  
-if __name__ == '__main__':
-    while True:
+
+def main():
+  while True:
+      try:
         print("Please pick an below: ")
         print("1. Filled Triangle")
         print("2. Filled Square")
@@ -52,9 +60,15 @@ if __name__ == '__main__':
         choice = int(input("Enter your choice from 1-5: "))
         if(choice==5) : break
         else:
-            size = int(input("Enter the size from 1-50: "))
-            if (choice==1) : Triangle(size)
-            if (choice==2) : Square(size)
-            if (choice==3) : Rect(size)
-            if (choice==4) : BowTie(size)  
-        print("\n")
+          menu={
+            1: Triangle,
+            2: Square,
+            3: Rect,
+            4: BowTie,
+            5: exit,
+          }
+          size = int(input("Enter the size from 1-50: "))
+        menu[choice](size)
+      except ValueError: break  
+main()
+        
