@@ -1,0 +1,8 @@
+#1. lets Enter data into your array
+number array = list ()
+number = input ("Enter the number of elements you want:")
+print ('Enter number in array: ')
+for i in range (int(number)):
+    n = input("number)):
+    number array.append(int(n))
+print ('ARRAY: ',number array)
